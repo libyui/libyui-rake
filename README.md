@@ -33,8 +33,8 @@ By default, this is the packaging tasks configuration:
 * `obs_project`: `devel:libraries:libyui`
 * `obs_sr_project`: `openSUSE:Factory`
 
-However, setting `LIBYUI_SUBMIT` to `SLES` will modify this configuration as
-follows:
+However, setting the environment variable `LIBYUI_SUBMIT` to `SLES` will modify
+this configuration as follows:
 
 * `obs_api`: `https://api.suse.de/`
 * `obs_project`: `Devel:YaST:Head`
