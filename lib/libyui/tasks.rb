@@ -13,14 +13,29 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 #++
+require "yaml"
+
 module Libyui
   module Tasks
     # Name of the CMake version file
     VERSION_CMAKE = "VERSION.cmake"
+    # Targets definition
+    TARGETS_FILE = File.expand_path("../../../data/targets.yml", __FILE__)
 
     # Wrapper to set up packaging tasks
     def self.configuration(&block)
       ::Packaging.configuration(&block)
+    end
+
+    def self.submit_to(target, file = TARGETS_FILE)
+      targets = YAML.load_file(file)
+      config = targets[target]
+      raise "Not configuration found for #{target}" if config.nil?
+      Libyui::Tasks.configuration do |conf|
+        config.each do |meth, val|
+          conf.send("#{meth}=", val)
+        end
+      end
     end
 
     # Some helpers to be used on tasks definition
