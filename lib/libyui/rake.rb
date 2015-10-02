@@ -28,7 +28,6 @@ Libyui::Tasks.configuration do |conf|
 
   conf.version = cmake_version
 
-  conf.skip_license_check << /.*/ if conf.package_name =~ /gtk|bindings/
   conf.skip_license_check << /bootstrap.sh|ChangeLog|Makefile.cvs/
   conf.skip_license_check << /^buildtools\/.*/
   conf.skip_license_check << /\.(cmake|gv|ui|xpm)$/
