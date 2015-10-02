@@ -26,15 +26,27 @@ available.
   end
 ```
 
+To avoid duplication, Libyui::Tasks provides a method to set packaging tasks
+configuration choosing from a set of [targets
+definitions](https://github.com/libyui/libyui-rake/blob/master/data/targets.yml).
+For example, if you want to submit to SLE12, you can do:
+
+```
+  Libyui::Tasks.submit_to(:sle12)
+```
+
+This method can receive, as a second parameter, the path to your own
+definitions if you need.
+
 ### Default configuration
 
-By default, this is the packaging tasks configuration:
+By default, this is the packaging tasks configuration (`:factory`):
 
 * `obs_project`: `devel:libraries:libyui`
 * `obs_sr_project`: `openSUSE:Factory`
 
-However, setting the environment variable `LIBYUI_SUBMIT` to `SLES` will modify
-this configuration as follows:
+However, setting the environment variable `LIBYUI_SUBMIT` to `SLES` will set
+target to `:sle12`, modifying the configuration as follows:
 
 * `obs_api`: `https://api.suse.de/`
 * `obs_project`: `Devel:YaST:Head`
