@@ -33,7 +33,7 @@ module Libyui
       raise "Not configuration found for #{target}" if config.nil?
       Libyui::Tasks.configuration do |conf|
         config.each do |meth, val|
-          conf.send("#{meth}=", val)
+          conf.public_send("#{meth}=", val)
         end
       end
     end
