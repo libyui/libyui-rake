@@ -34,7 +34,7 @@ from git repo. Heavily inspired in yast-rake.
 end
 
   # gem content
-  spec.files   = Dir["lib/**/*.rb", "lib/tasks/*.rake", "data/*", "COPYING", "VERSION"]
+  spec.files   = Dir["lib/**/*.rb", "lib/tasks/*.rake", "data/*", "COPYING", "README.md", "VERSION"]
 
   # define LOAD_PATH
   spec.require_path = "lib"
