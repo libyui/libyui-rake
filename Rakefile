@@ -53,9 +53,9 @@ namespace :version do
   end
 end
 
-desc 'Pretend to run the test suite'
+desc "Pretend to run the test suite"
 task :test do
-  puts 'No tests yet' if verbose
+  puts "No tests yet" if verbose
 end
 
 Libyui::Tasks.configuration do |conf|

@@ -16,6 +16,7 @@
 require "yaml"
 
 module Libyui
+  # Facilities to write Libyui related rake tasks.
   module Tasks
     # Name of the CMake version file
     VERSION_CMAKE = "VERSION.cmake"
@@ -64,9 +65,9 @@ module Libyui
       # @see VERSION_CMAKE
       def cmake_version(file = nil)
         f = File.read(file || VERSION_CMAKE)
-        [ cmake_value(f, "VERSION_MAJOR"),
-          cmake_value(f, "VERSION_MINOR"),
-          cmake_value(f, "VERSION_PATCH") ].join(".")
+        [cmake_value(f, "VERSION_MAJOR"),
+         cmake_value(f, "VERSION_MINOR"),
+         cmake_value(f, "VERSION_PATCH")].join(".")
       end
     end
   end
