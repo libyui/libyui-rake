@@ -16,18 +16,11 @@
 require "packaging"
 require "libyui/tasks"
 
+target = ENV["LIBYUI_SUBMIT"] == "SLES" ? :sle12 : :factory
+Libyui::Tasks.submit_to(target)
+
 Libyui::Tasks.configuration do |conf|
   include Libyui::Tasks::Helpers
-
-  if ENV["LIBYUI_SUBMIT"] == "SLES"
-    conf.obs_api        = "https://api.suse.de/"
-    conf.obs_project    = "Devel:YaST:Head"
-    conf.obs_target     = "SLE-12-SP1"
-    conf.obs_sr_project = "SUSE:SLE-12-SP1:GA"
-  else
-    conf.obs_project    = "devel:libraries:libyui"
-    conf.obs_sr_project = "openSUSE:Factory"
-  end
 
   # read package name from spec file name because CWD can have a -branch suffix
   main_spec = Dir.glob("package/*.spec").sort.last
