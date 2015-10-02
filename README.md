@@ -15,12 +15,12 @@ Create a `Rakefile` with this content:
 
 ### Customizing
 
-Libyui::Task provides a method to change packaging tasks configuration. As it's
+Libyui::Tasks provides a method to change packaging tasks configuration. As it's
 just a proxy for `::Packaging.configuration`, the same options will be
 available.
 
 ```ruby
-  Libyui::Task.configuration do |conf|
+  Libyui::Tasks.configuration do |conf|
     conf.obs_api = "https://api.opensuse.org/"
     conf.obs_project = "Devel:Libyui:Head"
   end
