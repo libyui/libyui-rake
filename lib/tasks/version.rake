@@ -22,14 +22,15 @@ namespace :version do
     Dir.glob("package/*.spec").each do |spec_filename|
       spec_v = spec_version(spec_filename)
       if cmake_v != spec_v
-        raise "Version mismatch, #{Libyui::Tasks::VERSION_CMAKE}:#{cmake_v} #{spec_filename}:#{spec_v}"
+        raise "Version mismatch, #{Libyui::Tasks::VERSION_CMAKE}:#{cmake_v} "\
+          "#{spec_filename}:#{spec_v}"
       end
     end
     puts cmake_v if verbose
   end
 
   desc "Increase the last part of version in spec and cmake files"
-  task :bump => :check do
+  task bump: :check do
     v = cmake_version.split(".")  # ["1", "2", "3"]
 
     patch = v.last.to_i.next.to_s # "4"

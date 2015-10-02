@@ -13,7 +13,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 #++
-desc 'Pretend to run the test suite'
+desc "Pretend to run the test suite"
 task :test do
-  puts 'No tests yet' if verbose
+  puts "No tests yet" if verbose
 end
