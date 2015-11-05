@@ -16,8 +16,8 @@
 require "packaging"
 require "libyui/tasks"
 
-target = ENV["LIBYUI_SUBMIT"] == "SLES" ? :sle12 : :factory
-Libyui::Tasks.submit_to(target)
+target = ENV["LIBYUI_SUBMIT"] || ENV["YAST_SUBMIT"] || :factory
+Libyui::Tasks.submit_to(target.to_sym)
 
 Libyui::Tasks.configuration do |conf|
   include Libyui::Tasks::Helpers
