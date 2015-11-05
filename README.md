@@ -13,8 +13,6 @@ Create a `Rakefile` with this content:
 
 ## Packaging tasks setup
 
-### Customizing
-
 Libyui::Tasks provides a method to change packaging tasks configuration. As it's
 just a proxy for `::Packaging.configuration`, the same options will be
 available.
@@ -34,24 +32,13 @@ For example, if you want to submit to SLE12, you can do:
 ```
   Libyui::Tasks.submit_to(:sle12)
 ```
-
 This method can receive, as a second parameter, the path to your own
-definitions if you need.
+definitions if needed.
 
-### Default configuration
-
-By default, this is the packaging tasks configuration (`:factory`):
-
-* `obs_project`: `devel:libraries:libyui`
-* `obs_sr_project`: `openSUSE:Factory`
-
-However, setting the environment variable `LIBYUI_SUBMIT` to `SLES` will set
-target to `:sle12`, modifying the configuration as follows:
-
-* `obs_api`: `https://api.suse.de/`
-* `obs_project`: `Devel:YaST:Head`
-* `obs_target`: `SLE-12-SP1`
-* `obs_sr_project`: `SUSE:SLE-12-SP1:GA`
+If `submit_to` is not explicitly used, it will be read from the environment
+variable `LIBYUI_SUBMIT`. If that variable is not set, the variable
+`YAST_SUBMIT` will be used instead. Finally, if none of the special
+environment variables is set, `:factory` will be used as target.
 
 ## Additional tasks
 
