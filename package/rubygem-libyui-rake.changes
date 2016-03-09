@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Wed Mar  9 14:46:24 CET 2016 - schubi@suse.de
+
+- Requiring packaging_rake_tasks ~> 1.1.4 in order to check
+  for bugzilla,fate entries in the changes file.
+  (bnc#0)
+- 0.1.2
+
+-------------------------------------------------------------------
 Thu Nov  5 10:52:47 UTC 2015 - ancor@suse.com
 
 - Targets definition and usage are now similar to yast-rake
