@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.name	= "libyui-rake"
   spec.version	= File.read(File.expand_path("../VERSION", __FILE__)).chomp
   spec.summary	= "Rake tasks that provide basic work-flow for libyui development"
-  spec.license    = "LGPL v2.1"
+  spec.license    = "LGPL-2.1"
 
   # author
   spec.author	= "YaST team"
@@ -28,9 +28,10 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Rake tasks providing basic work-flow for libyui development"
   spec.description = <<-end
-Rake tasks that support work-flow of libyui developer. It allows packaging repo,
-send it to build service, create submit request to target repo or run client
-from git repo. Heavily inspired in yast-rake.
+Rake tasks that support work-flow of libyui developer. It allows packaging
+a repo, sending it to build service, creating submit request
+to target repo or running client from git repo.
+Heavily inspired in yast-rake.
 end
 
   # gem content
@@ -41,5 +42,5 @@ end
 
   # dependencies
   spec.add_dependency("rake", "~> 10.0")
-  spec.add_dependency("packaging_rake_tasks", "~> 1.1.4")
+  spec.add_dependency("packaging_rake_tasks", "> 1.1.4")
 end

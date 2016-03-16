@@ -1,7 +1,7 @@
 #
 # spec file for package rubygem-libyui-rake
 #
-# Copyright (c) 2015 SUSE LINUX GmbH, Nuernberg, Germany.
+# Copyright (c) 2016 SUSE LINUX GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -16,7 +16,7 @@
 #
 
 Name:           rubygem-libyui-rake
-Version:        0.1.1
+Version:        0.1.3
 Release:        0
 %define mod_name libyui-rake
 %define mod_full_name %{mod_name}-%{version}
@@ -27,13 +27,14 @@ BuildRequires:  %{rubygem gem2rpm}
 Url:            http://github.org/openSUSE/libyui-rake
 Source:         http://rubygems.org/gems/%{mod_full_name}.gem
 Summary:        Rake tasks providing basic work-flow for libyui development
-License:        LGPL v2.1
+License:        LGPL-2.1
 Group:          Development/Languages/Ruby
 
 %description
 Rake tasks that support work-flow of libyui developer. It allows packaging
-repo, send it to build service, create submit request to target repo or run
-client from git repo. Heavily inspired in yast-rake.
+a repo, sending it to build service, creating submit request
+to target repo or running client from git repo.
+Heavily inspired in yast-rake.
 
 %prep
 
