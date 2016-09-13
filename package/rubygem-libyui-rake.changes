@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Sep 13 08:37:37 UTC 2016 - jreidinger@suse.com
+
+- add data for submitting to Leap and SLES12 SP3 (bnc#996865)
+- 0.1.4
+
+-------------------------------------------------------------------
 Wed Mar 16 11:43:58 UTC 2016 - mvidner@suse.com
 
 - Packaging fixes:
