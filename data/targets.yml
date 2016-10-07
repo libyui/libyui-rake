@@ -1,3 +1,4 @@
+# Usage: LIBYUI_SUBMIT=staging rake osc:commit
 :leap_42_1:
   obs_api: "https://api.opensuse.org"
   obs_target: "openSUSE_Leap_42.1"
@@ -36,3 +37,6 @@
 :factory:
   obs_project: "devel:libraries:libyui"
   obs_sr_project: "openSUSE:Factory"
+:staging:
+  obs_project: "devel:libraries:libyui:Staging"
+  obs_target: "openSUSE_Tumbleweed"

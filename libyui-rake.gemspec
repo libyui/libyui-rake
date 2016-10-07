@@ -41,6 +41,6 @@ end
   spec.require_path = "lib"
 
   # dependencies
-  spec.add_dependency("rake", "~> 10.0")
-  spec.add_dependency("packaging_rake_tasks", "> 1.1.4")
+  spec.add_runtime_dependency("rake", "> 10.0", "< 12")
+  spec.add_runtime_dependency("packaging_rake_tasks", "> 1.1.4", "< 2")
 end
