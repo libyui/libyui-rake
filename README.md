@@ -1,5 +1,8 @@
 # Libyui::Rake
 
+[![Build Status](https://travis-ci.org/libyui/libyui-rake.svg?branch=master
+)](https://travis-ci.org/libyui/libyui-rake)
+
 Rake tasks to help with uniform handling of libyui related projects. It provides setup for
 [packaging tasks](http://github.com/openSUSE/packaging_tasks) and add some additional tasks.
 
