@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.name	= "libyui-rake"
   spec.version	= File.read(File.expand_path("../VERSION", __FILE__)).chomp
   spec.summary	= "Rake tasks that provide basic work-flow for libyui development"
-  spec.license    = "LGPL-2.1"
+  spec.license = "LGPL-2.1"
 
   # author
   spec.author	= "YaST team"
@@ -35,7 +35,7 @@ Heavily inspired in yast-rake.
 end
 
   # gem content
-  spec.files   = Dir["lib/**/*.rb", "lib/tasks/*.rake", "data/*", "COPYING", "README.md", "VERSION"]
+  spec.files = Dir["lib/**/*.rb", "lib/tasks/*.rake", "data/*", "COPYING", "README.md", "VERSION"]
 
   # define LOAD_PATH
   spec.require_path = "lib"
