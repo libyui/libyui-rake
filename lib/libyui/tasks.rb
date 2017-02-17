@@ -19,7 +19,7 @@ module Libyui
   # Facilities to write Libyui related rake tasks.
   module Tasks
     # Name of the CMake version file
-    VERSION_CMAKE = "VERSION.cmake"
+    VERSION_CMAKE = "VERSION.cmake".freeze
     # Targets definition
     TARGETS_FILE = File.expand_path("../../../data/targets.yml", __FILE__)
 
