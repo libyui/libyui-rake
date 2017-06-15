@@ -9,6 +9,11 @@
   obs_target: "openSUSE_Leap_42.2"
   obs_sr_project: "openSUSE:Leap:42.2"
   obs_project: "YaST:openSUSE:42.2"
+:leap_42_3:
+  obs_api: "https://api.opensuse.org"
+  obs_target: "openSUSE_Leap_42.3"
+  obs_sr_project: "openSUSE:Leap:42.3"
+  obs_project: "YaST:openSUSE:42.3"
 :sle12:
   obs_api: "https://api.suse.de/"
   obs_project: "Devel:YaST:SLE-12"
@@ -26,14 +31,19 @@
   obs_target: "SLE_12_SP2"
 :sle12sp3:
   obs_api: "https://api.suse.de/"
+  obs_project: "Devel:YaST:SLE-12-SP3"
+  obs_sr_project: "SUSE:SLE-12-SP3:Update"
+  obs_target: "SLE_12_SP3"
+:sle15:
+  obs_api: "https://api.suse.de/"
   obs_project: "Devel:YaST:Head"
-  obs_sr_project: "SUSE:SLE-12-SP3:GA"
-  obs_target: "sle12_sp3"
+  obs_sr_project: "SUSE:SLE-15:GA"
+  obs_target: "SUSE_SLE-15_GA"
 :sle_latest:
   obs_api: "https://api.suse.de/"
   obs_project: "Devel:YaST:Head"
-  obs_sr_project: "SUSE:SLE-12-SP3:GA"
-  obs_target: "sle12_sp3"
+  obs_sr_project: "SUSE:SLE-15:GA"
+  obs_target: "SUSE_SLE-15_GA"
 :factory:
   obs_project: "devel:libraries:libyui"
   obs_sr_project: "openSUSE:Factory"
