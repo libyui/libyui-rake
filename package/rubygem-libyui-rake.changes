@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Feb  5 13:43:37 UTC 2018 - shundhammer@suse.com
+
+- Allow 4 digits in version numbers (bsc#1074596)
+- 0.1.8
+
+-------------------------------------------------------------------
 Thu Jun 15 09:13:10 UTC 2017 - jreidinger@suse.com
 
 - Update sle12sp3 target and add sle15 target (bnc#1044312)
