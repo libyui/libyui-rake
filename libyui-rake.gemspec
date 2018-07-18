@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   # author
   spec.author	= "YaST team"
   spec.email	= "yast-devel@suse.com"
-  spec.homepage	= "http://github.org/openSUSE/libyui-rake"
+  spec.homepage	= "https://github.com/openSUSE/libyui-rake"
 
   spec.summary = "Rake tasks providing basic work-flow for libyui development"
   spec.description = <<-end
@@ -41,6 +41,6 @@ end
   spec.require_path = "lib"
 
   # dependencies
-  spec.add_runtime_dependency("rake", "> 10.0", "< 12")
+  spec.add_runtime_dependency("rake", "> 10.0", "< 999")
   spec.add_runtime_dependency("packaging_rake_tasks", "> 1.1.4", "< 2")
 end
