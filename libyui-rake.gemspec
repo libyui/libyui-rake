@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   # author
   spec.author	= "YaST team"
   spec.email	= "yast-devel@suse.com"
-  spec.homepage	= "http://github.org/openSUSE/libyui-rake"
+  spec.homepage	= "https://github.com/openSUSE/libyui-rake"
 
   spec.summary = "Rake tasks providing basic work-flow for libyui development"
   spec.description = <<-end

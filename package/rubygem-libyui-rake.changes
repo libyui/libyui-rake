@@ -1,7 +1,33 @@
 -------------------------------------------------------------------
+Fri Jun 15 13:12:04 UTC 2018 - jreidinger@suse.com
+
+- switch sle_latest to SLE15 SP1 and switch SLE15 GA to
+  maintenance mode (bsc#1044312)
+- 0.1.10
+
+-------------------------------------------------------------------
+Thu Apr 19 11:16:14 UTC 2018 - jreidinger@suse.com
+
+- add SLE12 SP4 as target and switch sle_latest to nil for now
+  until IBS create project for SLE15 SP1. (bsc#1044312)
+- 0.1.9
+
+-------------------------------------------------------------------
+Mon Feb  5 13:43:37 UTC 2018 - shundhammer@suse.com
+
+- Allow 4 digits in version numbers (bsc#1074596)
+- 0.1.8
+
+-------------------------------------------------------------------
+Thu Jun 15 09:13:10 UTC 2017 - jreidinger@suse.com
+
+- Update sle12sp3 target and add sle15 target (bnc#1044312)
+- 0.1.7
+
+-------------------------------------------------------------------
 Thu Nov 10 10:11:20 UTC 2016 - igonzalezsosa@suse.com
 
-- Update sle12sp2 target (bnc#1009324) 
+- Update sle12sp2 target (bnc#1009324)
 - 0.1.6
 
 -------------------------------------------------------------------

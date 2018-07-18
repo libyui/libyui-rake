@@ -55,19 +55,21 @@ module Libyui
       def cmake_value(s, key)
         e_key = Regexp.escape(key)
         m = /SET\s*\(\s*#{e_key}\s+"([^"]*)"\s*\)/.match(s)
-        m[1]
+        m ? m[1] : nil
       end
 
-      # Returns the CMake version from version file
+      # Returns the CMake version from the version file.
+      # VERSION_TWEAK is optional.
       #
       # @param  [String] Version file (VERSION_CMAKE by default)
-      # @return [String] like "1.2.3"
+      # @return [String] like "1.2.3" or "1.2.3.4"
       # @see VERSION_CMAKE
       def cmake_version(file = nil)
         f = File.read(file || VERSION_CMAKE)
         [cmake_value(f, "VERSION_MAJOR"),
          cmake_value(f, "VERSION_MINOR"),
-         cmake_value(f, "VERSION_PATCH")].join(".")
+         cmake_value(f, "VERSION_PATCH"),
+         cmake_value(f, "VERSION_TWEAK")].compact.join(".")
       end
     end
   end
