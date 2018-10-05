@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Oct  5 14:15:26 UTC 2018 - jreidinger@suse.com
+
+- Relax rake dependency as it works even with ruby 2.5(bsc#1044312)
+- 0.1.11
+
+-------------------------------------------------------------------
 Fri Jun 15 13:12:04 UTC 2018 - jreidinger@suse.com
 
 - switch sle_latest to SLE15 SP1 and switch SLE15 GA to
