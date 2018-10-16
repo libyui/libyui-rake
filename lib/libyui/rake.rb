@@ -30,7 +30,7 @@ Libyui::Tasks.configuration do |conf|
 
   conf.skip_license_check << /bootstrap.sh|ChangeLog|Makefile.cvs/
   conf.skip_license_check << /^buildtools\/.*/
-  conf.skip_license_check << /\.(cmake|gv|ui|xpm)$/
+  conf.skip_license_check << /\.(cmake|gv|ui|xpm|qrc)$/
   conf.skip_license_check << /^src\/lang_fonts$/
   conf.skip_license_check << /\.mng$/ # binary
 end
