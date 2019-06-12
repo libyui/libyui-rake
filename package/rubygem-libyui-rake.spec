@@ -1,7 +1,7 @@
 #
 # spec file for package rubygem-libyui-rake
 #
-# Copyright (c) 2018 SUSE LINUX GmbH, Nuernberg, Germany.
+# Copyright (c) 2018-2019 SUSE LINUX GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -32,10 +32,10 @@ License:        LGPL-2.1-only
 Group:          Development/Languages/Ruby
 
 %description
-Rake tasks that support work-flow of libyui developer. It allows packaging
-a repo, sending it to build service, creating submit request
-to target repo or running client from git repo.
-Heavily inspired in yast-rake.
+Rake tasks that support the workflow of a libyui developer. It allows packaging
+a repo, sending it to the build service, creating a submit request to the
+target repo or running the client from the git repo.
+Heavily inspired by yast-rake.
 
 %prep
 
