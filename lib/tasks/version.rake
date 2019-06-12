@@ -13,8 +13,12 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 #++
+
+require "packaging/git_helpers"
+
 namespace :version do
   include Libyui::Tasks::Helpers
+  include Packaging::GitHelpers
 
   desc "Check that the version numbers are in sync"
   task :check do
@@ -46,5 +50,23 @@ namespace :version do
       File.write(spec_filename, s)
     end
     puts version if verbose
+  end
+
+  desc "Show the version"
+  task :show do
+    puts cmake_version
+  end
+
+  desc "Create a git tag with this version"
+  task :tag do
+    create_version_tag { cmake_version }
+    # To use the version number from the .spec file, just use
+    #   create_version_tag
+    # (without the code block)
+  end
+
+  desc "Create a git tag with this version (master branch only)"
+  task :tag_if_master do
+    create_version_tag { cmake_version } if master?
   end
 end
