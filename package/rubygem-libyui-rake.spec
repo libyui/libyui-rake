@@ -17,7 +17,7 @@
 
 
 Name:           rubygem-libyui-rake
-Version:        0.1.15
+Version:        0.1.16
 Release:        0
 %define mod_name libyui-rake
 %define mod_full_name %{mod_name}-%{version}
