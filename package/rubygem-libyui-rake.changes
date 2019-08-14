@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Aug 14 11:03:31 UTC 2019 - Imobach Gonzalez Sosa <igonzalezsosa@suse.com>
+
+- Fix libyui/tasks.rb permissions (bsc#1145602)
+- 0.1.18
+
+-------------------------------------------------------------------
 Tue Aug 13 14:53:14 UTC 2019 - José Iván López González <jlopez@suse.com>
 
 - Added SLE-12-SP5 target (bsc#1145480)
