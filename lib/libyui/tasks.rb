@@ -41,12 +41,6 @@ module Libyui
 
     # Some helpers to be used on tasks definition
     module Helpers
-      # Read the version from spec file
-      # @return [String] like "1.2.3"
-      def spec_version(spec_filename)
-        File.read(spec_filename)[/^Version:\s*(\S+)/, 1]
-      end
-
       # Extracts the value from a CMake string
       #
       # @param s   [String] '... SET( VERSION_MAJOR "3") ...'
