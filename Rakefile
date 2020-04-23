@@ -16,7 +16,7 @@
 
 require "packaging"
 require_relative "lib/libyui/tasks"
-Libyui::Tasks.submit_to(:factory)
+Libyui::Tasks.submit_to :sle15sp2
 
 # build the gem package (replaces the original 'tarball' task)
 Rake::Task[:tarball].clear
