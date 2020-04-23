@@ -54,11 +54,16 @@
   obs_project: "Devel:YaST:SLE-15-SP1"
   obs_sr_project: "SUSE:SLE-15-SP1:Update"
   obs_target: "SUSE_SLE-15-SP1_GA"
+:sle15sp2:
+  obs_api: "https://api.suse.de/"
+  obs_project: "Devel:YaST:SLE-15-SP2"
+  obs_sr_project: "SUSE:SLE-15-SP2:Update"
+  obs_target: "SUSE_SLE-15-SP2_GA"
 :sle_latest:
   obs_api: "https://api.suse.de/"
   obs_project: "Devel:YaST:Head"
-  obs_sr_project: "SUSE:SLE-15-SP2:GA"
-  obs_target: "SUSE_SLE-15-SP2_GA"
+  obs_sr_project: "SUSE:SLE-15-SP3:GA"
+  obs_target: "SUSE_SLE-15-SP3_GA"
 :factory:
   obs_project: "devel:libraries:libyui"
   obs_sr_project: "openSUSE:Factory"
