@@ -1,5 +1,5 @@
 #--
-# Copyright (C) 2015 SUSE LLC
+# Copyright (C) 2015-2021 SUSE LLC
 #   This library is free software; you can redistribute it and/or modify
 # it only under the terms of version 2.1 of the GNU Lesser General Public
 # License as published by the Free Software Foundation.
@@ -41,29 +41,110 @@ module Libyui
 
     # Some helpers to be used on tasks definition
     module Helpers
-      # Extracts the value from a CMake string
+      # Returns the CMake version from the version file.
+      # VERSION_TWEAK is optional.
       #
-      # @param s   [String] '... SET( VERSION_MAJOR "3") ...'
-      # @param key [String] 'VERSION_MAJOR'
-      # @return "3"
+      # @param filename [String, nil] %{VERSION_CMAKE} by default
+      # @return [String] like "1.2.3" or "1.2.3.4"
+      def cmake_version(filename = nil)
+        filename = cmake_filename(filename)
+
+        values = cmake_values(filename,
+          "VERSION_MAJOR", "VERSION_MINOR", "VERSION_PATCH", "VERSION_TWEAK")
+
+        values.compact.join(".")
+      end
+
+      # Returns the CMake so version from the version file.
+      #
+      # @param filename [String, nil] %{VERSION_CMAKE} by default
+      # @return [String] like "4.0.0"
+      def cmake_so_version(filename = nil)
+        filename = cmake_filename(filename)
+
+        values = cmake_values(filename, "SONAME_MAJOR", "SONAME_MINOR", "SONAME_PATCH")
+
+        values.compact.join(".")
+      end
+
+      # Bumps the so version in the CMake version file
+      #
+      # @param filename [string, nil] %{VERSION_CMAKE} by default
+      def bump_cmake_so_version(filename = nil)
+        filename = cmake_filename(filename)
+
+        so_version = cmake_so_version(filename).split(".").first.to_i.next
+
+        content = File.read(filename)
+        content.sub!(/(^SET.*SONAME_MAJOR.*)"([^"\n])*"/, "\\1\"#{so_version}\"")
+        content.sub!(/(^SET.*SONAME_MINOR.*)"([^"\n])*"/, "\\1\"0\"")
+        content.sub!(/(^SET.*SONAME_PATCH.*)"([^"\n])*"/, "\\1\"0\"")
+
+        File.write(filename, content)
+      end
+
+      # Extract values from a CMake version file
+      #
+      # @see cmake_value
+      #
+      # @param filename [String]
+      # @param keys [Array<String>]
+      def cmake_values(filename, *keys)
+        content = File.read(filename)
+
+        keys.map { |k| cmake_value(content, k) }
+      end
+
+      # Extracts the value of the given key from the content of a CMake version file
+      #
+      # @param s   [String] e.g., '... SET( VERSION_MAJOR "3") ...'
+      # @param key [String] e.g., 'VERSION_MAJOR'
+      #
+      # @return [String] e.g., "3"
       def cmake_value(s, key)
         e_key = Regexp.escape(key)
         m = /SET\s*\(\s*#{e_key}\s+"([^"]*)"\s*\)/.match(s)
         m ? m[1] : nil
       end
 
-      # Returns the CMake version from the version file.
-      # VERSION_TWEAK is optional.
+      # Filename of the CMake version file
       #
-      # @param  [String] Version file (VERSION_CMAKE by default)
-      # @return [String] like "1.2.3" or "1.2.3.4"
-      # @see VERSION_CMAKE
-      def cmake_version(file = nil)
-        f = File.read(file || VERSION_CMAKE)
-        [cmake_value(f, "VERSION_MAJOR"),
-         cmake_value(f, "VERSION_MINOR"),
-         cmake_value(f, "VERSION_PATCH"),
-         cmake_value(f, "VERSION_TWEAK")].compact.join(".")
+      # @param filename [string, nil] %{VERSION_CMAKE} if no filename is given
+      # @return [String]
+      def cmake_filename(filename)
+        filename || VERSION_CMAKE
+      end
+
+      # Returns the so version from the given spec file
+      #
+      # @param filename [String, nil] if nil, it uses the shortest spec filename
+      # @return [String, nil] e.g., "12"
+      def spec_so_version(filename = nil)
+        filename = spec_filename(filename)
+
+        File.read(filename).scan(/^%define\s+so_version\s+(\d+)/).flatten.first
+      end
+
+      # Bumps the so version in the given spec file
+      #
+      # @param filename [String, nil] if nil, it uses the shortest spec filename
+      def bump_spec_so_version(filename = nil)
+        filename = spec_filename(filename)
+
+        so_version = spec_so_version(filename).to_i.next
+
+        content = File.read(filename)
+        content.gsub!(/^(%define\s+so_version\s+)\d+$/, "\\1#{so_version}")
+
+        File.write(filename, content)
+      end
+
+      # Filename of the spec file
+      #
+      # @param filename [String, nil] if nil, it uses the shortest spec filename
+      # @return [String]
+      def spec_filename(filename)
+        filename || Dir.glob("package/*.spec").sort.first
       end
     end
   end
