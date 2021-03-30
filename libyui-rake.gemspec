@@ -42,6 +42,6 @@ end
 
   # dependencies
   spec.add_runtime_dependency("rake", "> 10.0", "< 99")
-  spec.add_runtime_dependency("packaging_rake_tasks", "~> 1.4.8")
-  # "~> 1.4.8"  means ">= 1.4.8 and < 2" (thanks to darix)
+  spec.add_runtime_dependency("packaging_rake_tasks", "~> 1.5")
+  # "~> 1.5"  means ">= 1.5 and < 2" (thanks to darix)
 end
