@@ -1,4 +1,13 @@
 -------------------------------------------------------------------
+Wed Mar 31 13:35:58 UTC 2021 - Ladislav Slezák <lslezak@suse.cz>
+
+- Updated OBS build targets
+  - Added "sle15sp3" target (bsc#1184225)
+  - Added future "sle15sp4" target
+  - Update "sle_latest" to point to "sle15sp4"
+- 0.1.23
+
+-------------------------------------------------------------------
 Tue Mar 30 14:29:14 UTC 2021 - Ladislav Slezák <lslezak@suse.cz>
 
 - Fixed packaging_rake_tasks dependency (related to bsc#1183957)
