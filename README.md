@@ -1,7 +1,7 @@
 # Libyui::Rake
 
-[![Build Status](https://travis-ci.org/libyui/libyui-rake.svg?branch=master
-)](https://travis-ci.org/libyui/libyui-rake)
+[![Workflow Status](https://github.com/libyui/libyui-rake/workflows/CI/badge.svg?branch=master)](
+https://github.com/libyui/libyui-rake/actions?query=branch%3Amaster)
 
 Rake tasks to help with uniform handling of libyui related projects. It provides setup for
 [packaging tasks](http://github.com/openSUSE/packaging_tasks) and add some additional tasks.
@@ -10,7 +10,7 @@ Rake tasks to help with uniform handling of libyui related projects. It provides
 
 Create a `Rakefile` with this content:
 
-```
+```ruby
   require "libyui/rake"
 ```
 
@@ -32,7 +32,7 @@ configuration choosing from a set of [targets
 definitions](https://github.com/libyui/libyui-rake/blob/master/data/targets.yml).
 For example, if you want to submit to SLE12, you can do:
 
-```
+```ruby
   Libyui::Tasks.submit_to(:sle12)
 ```
 This method can receive, as a second parameter, the path to your own
