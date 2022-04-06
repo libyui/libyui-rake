@@ -9,7 +9,7 @@ jobs:
   Tests:
     runs-on: ubuntu-latest
     container:
-      image: registry.opensuse.org/devel/libraries/libyui/sle-15/sp4/containers/libyui-devel:latest
+      image: registry.opensuse.org/devel/libraries/libyui/containers/libyui-devel:latest
 
     steps:
 
