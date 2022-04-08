@@ -48,5 +48,7 @@ Gem::Specification.new do |spec|
   # "~> 1.5"  means ">= 1.5 and < 2" (thanks to darix)
   spec.add_runtime_dependency("packaging_rake_tasks", "~> 1.5")
   spec.add_runtime_dependency("rake", "> 10.0", "< 99")
+  # enable MFA (2FA) authentication at rubygems.org
+  # see https://guides.rubygems.org/mfa-requirement-opt-in/
   spec.metadata["rubygems_mfa_required"] = "true"
 end
