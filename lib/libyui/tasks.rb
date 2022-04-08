@@ -104,9 +104,9 @@ module Libyui
       # @param key [String] e.g., 'VERSION_MAJOR'
       #
       # @return [String] e.g., "3"
-      def cmake_value(s, key)
+      def cmake_value(text, key)
         e_key = Regexp.escape(key)
-        m = /SET\s*\(\s*#{e_key}\s+"([^"]*)"\s*\)/.match(s)
+        m = /SET\s*\(\s*#{e_key}\s+"([^"]*)"\s*\)/.match(text)
         m ? m[1] : nil
       end
 
