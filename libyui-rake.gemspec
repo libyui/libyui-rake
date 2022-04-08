@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Copyright (C) 2015 SUSE LLC
 #   This library is free software; you can redistribute it and/or modify

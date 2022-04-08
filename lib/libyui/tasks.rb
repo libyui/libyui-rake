@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Copyright (C) 2015-2021 SUSE LLC
 #   This library is free software; you can redistribute it and/or modify
@@ -19,7 +21,7 @@ module Libyui
   # Facilities to write Libyui related rake tasks.
   module Tasks
     # Name of the CMake version file
-    VERSION_CMAKE = "VERSION.cmake".freeze
+    VERSION_CMAKE = "VERSION.cmake"
     # Targets definition
     TARGETS_FILE = File.expand_path("../../data/targets.yml", __dir__)
 
@@ -145,7 +147,7 @@ module Libyui
       # @param filename [String, nil] if nil, it uses the shortest spec filename
       # @return [String]
       def spec_filename(filename)
-        filename || Dir.glob("package/*.spec").sort.first
+        filename || Dir.glob("package/*.spec").min
       end
     end
   end

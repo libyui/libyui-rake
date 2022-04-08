@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Copyright (C) 2021 SUSE LLC
 #   This library is free software; you can redistribute it and/or modify
@@ -24,7 +26,7 @@ namespace :so_version do
     filenames = Dir.glob("package/*.spec").sort
     filenames.reject! { |f| spec_so_version(f).nil? }
 
-    mismatches = filenames.select { |f| spec_so_version(f) != so_version }
+    mismatches = filenames.reject { |f| spec_so_version(f) == so_version }
 
     if mismatches.any?
       messages = ["so version mismatch:"]
