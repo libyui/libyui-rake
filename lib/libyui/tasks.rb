@@ -21,7 +21,7 @@ module Libyui
     # Name of the CMake version file
     VERSION_CMAKE = "VERSION.cmake".freeze
     # Targets definition
-    TARGETS_FILE = File.expand_path("../../../data/targets.yml", __FILE__)
+    TARGETS_FILE = File.expand_path("../../data/targets.yml", __dir__)
 
     # Wrapper to set up packaging tasks
     def self.configuration(&block)
@@ -32,6 +32,7 @@ module Libyui
       targets = YAML.load_file(file)
       config = targets[target]
       raise "Not configuration found for #{target}" if config.nil?
+
       Libyui::Tasks.configuration do |conf|
         config.each do |meth, val|
           conf.public_send("#{meth}=", val)
