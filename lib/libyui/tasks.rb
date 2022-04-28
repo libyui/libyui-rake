@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Copyright (C) 2015-2021 SUSE LLC
 #   This library is free software; you can redistribute it and/or modify
@@ -19,9 +21,9 @@ module Libyui
   # Facilities to write Libyui related rake tasks.
   module Tasks
     # Name of the CMake version file
-    VERSION_CMAKE = "VERSION.cmake".freeze
+    VERSION_CMAKE = "VERSION.cmake"
     # Targets definition
-    TARGETS_FILE = File.expand_path("../../../data/targets.yml", __FILE__)
+    TARGETS_FILE = File.expand_path("../../data/targets.yml", __dir__)
 
     # Wrapper to set up packaging tasks
     def self.configuration(&block)
@@ -32,6 +34,7 @@ module Libyui
       targets = YAML.load_file(file)
       config = targets[target]
       raise "Not configuration found for #{target}" if config.nil?
+
       Libyui::Tasks.configuration do |conf|
         config.each do |meth, val|
           conf.public_send("#{meth}=", val)
@@ -101,9 +104,9 @@ module Libyui
       # @param key [String] e.g., 'VERSION_MAJOR'
       #
       # @return [String] e.g., "3"
-      def cmake_value(s, key)
+      def cmake_value(text, key)
         e_key = Regexp.escape(key)
-        m = /SET\s*\(\s*#{e_key}\s+"([^"]*)"\s*\)/.match(s)
+        m = /SET\s*\(\s*#{e_key}\s+"([^"]*)"\s*\)/.match(text)
         m ? m[1] : nil
       end
 
@@ -144,7 +147,7 @@ module Libyui
       # @param filename [String, nil] if nil, it uses the shortest spec filename
       # @return [String]
       def spec_filename(filename)
-        filename || Dir.glob("package/*.spec").sort.first
+        filename || Dir.glob("package/*.spec").min
       end
     end
   end

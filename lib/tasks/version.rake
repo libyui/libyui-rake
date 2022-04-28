@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Copyright (C) 2015 SUSE LLC
 #   This library is free software; you can redistribute it and/or modify
@@ -27,7 +29,7 @@ namespace :version do
       spec_v = spec_version(spec_filename)
       if cmake_v != spec_v
         raise "Version mismatch, #{Libyui::Tasks::VERSION_CMAKE}:#{cmake_v} "\
-          "#{spec_filename}:#{spec_v}"
+              "#{spec_filename}:#{spec_v}"
       end
     end
     puts cmake_v if verbose

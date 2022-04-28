@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 # Copyright (C) 2015 SUSE LLC
 #   This library is free software; you can redistribute it and/or modify
@@ -23,7 +25,7 @@ Libyui::Tasks.configuration do |conf|
   include Libyui::Tasks::Helpers
 
   # read package name from spec file name because CWD can have a -branch suffix
-  main_spec = Dir.glob("package/*.spec").sort.last
+  main_spec = Dir.glob("package/*.spec").max
   conf.package_name = main_spec[/package\/(.*)\.spec$/, 1]
 
   conf.version = cmake_version
@@ -36,7 +38,7 @@ Libyui::Tasks.configuration do |conf|
 end
 
 # load libyui-rake tasks
-task_path = File.expand_path("../../tasks", __FILE__)
+task_path = File.expand_path("../tasks", __dir__)
 Dir["#{task_path}/*.rake"].each do |f|
   load f
 end
