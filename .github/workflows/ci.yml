@@ -14,7 +14,10 @@ jobs:
     steps:
 
     - name: Git Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+
+    - name: Configure git
+      run:  git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
     - name: Install Dependencies
       run: zypper --non-interactive install --no-recommends "rubygem(`rpm --eval '%{rb_default_ruby_abi}'`:rubocop:1.24.1)" yast2-devtools
