@@ -74,11 +74,21 @@
   obs_project: "Devel:YaST:SLE-15-SP5"
   obs_sr_project: "SUSE:SLE-15-SP5:Update"
   obs_target: "SUSE_SLE-15-SP5_GA"
+:sle15sp6:
+  obs_api: "https://api.suse.de/"
+  obs_project: "Devel:YaST:SLE-15-SP6"
+  obs_sr_project: "SUSE:SLE-15-SP6:Update"
+  obs_target: "SUSE_SLE-15-SP6_GA"
+:sle15sp7:
+  obs_api: "https://api.suse.de/"
+  obs_project: "Devel:YaST:SLE-15-SP7"
+  obs_sr_project: "SUSE:SLE-15-SP7:Update"
+  obs_target: "SUSE_SLE-15-SP7_GA"
 :sle_latest:
   obs_api: "https://api.suse.de/"
   obs_project: "Devel:YaST:Head"
-  obs_sr_project: "SUSE:SLE-15-SP5:GA"
-  obs_target: "SUSE_SLE-15-SP5_GA"
+  obs_sr_project: "SUSE:SLE-15-SP7:GA"
+  obs_target: "SUSE_SLE-15-SP7_GA"
 :factory:
   obs_project: "devel:libraries:libyui"
   obs_sr_project: "openSUSE:Factory"
