@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Thu Sep  5 12:12:43 UTC 2024 - Ladislav Slezák <lslezak@suse.com>
+
+- Updated submit data, added SLE15-SP6 and SLE15-SP7 targets,
+  "sle_latest" moved to SLE15-SP7 (related to bsc#1230201)
+- 0.1.25
+
+-------------------------------------------------------------------
 Fri Apr  8 07:14:20 UTC 2022 - Ladislav Slezák <lslezak@suse.cz>
 
 - Use Rubocop 1.24.1 (the old one does not work in Ruby 3)
